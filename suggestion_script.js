@@ -189,7 +189,7 @@ function store(){
     const wlvl = document.getElementById("myRange").value;
     const land = document.getElementById("land").value;
     alluvial=["Gujarat","Punjab","Haryana","UttarPradesh","Bihar","Jharkhand"]
-    black=["Maharashtra","Madhya Pradesh","Andra Pradesh","TamilNadu"]
+    black=["Maharashtra","Madhya Pradesh","Andra Pradesh","Tamil Nadu"]
     red=["Orissa","Chhattisgarh"]
     laterite=["Karnataka","Kerala","Assam"]
     arid=["Rajasthan"]
