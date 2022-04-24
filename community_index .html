@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="community_style.css">
+    
+    <!----===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    
+    <title>Community</title> 
+</head>
+<body>
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="logo.png" alt="">
+                </span>
+
+                <div class="text logo-text">
+                    <span class="name">Farmly</span>
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-home-alt icon' ></i>
+                            <span class="text nav-text">Home</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="index.html">
+                            <i class='bx bx-bar-chart-alt-2 icon' ></i>
+                            <span class="text nav-text">Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="suggestion_index.html">
+                            <i class='bx bx-comment-detail icon'></i>
+                            <span class="text nav-text">Suggestion</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="community_index.html">
+                            <i class='bx bx-group icon' ></i>
+                            <span class="text nav-text">Community</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-question-mark icon' ></i>
+                            <span class="text nav-text">FAQs</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="">
+                    <a href="#">
+                        <i class='bx bx-log-out icon' ></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Dark mode</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+                
+            </div>
+        </div>
+
+    </nav>
+
+    <section class="comm">
+      <div class="text">Community</div>
+      <div class="comm-body">
+        <div class="jj-header">
+          <h2>All Questions</h2>
+          <button class="btn"> Ask a Question
+          </button>
+        </div>
+        <div class="jj-questions">
+          <ol>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <script src="community_script.js"></script>
+    <script src="data.js"></script>
+    <script type="text/javascript">
+      console.log(threads);
+      var container = document.querySelector('ol');
+      for (let thread of threads) {
+          var html = `
+          <li class="jj-row">
+              <a href="thread.html?${thread.id}">
+                  <h4 class="title">
+                      ${thread.title}
+                  </h4>
+                  <div class="jj-bottom">
+                      <p class="timestamp">
+                          ${new Date(thread.date).toLocaleString()}
+                      </p>
+                      <p class="comment-count">
+                          ${thread.comments.length} comments
+                      </p>
+                  </div>
+              </a>
+          </li>
+          `
+          container.insertAdjacentHTML('beforeend', html);
+      }
+    </script>
+</body>
+</html>
